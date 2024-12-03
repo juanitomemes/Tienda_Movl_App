@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "959427218827",
+    "project_id": "proyecto-tm-ce4ab",
+    "storage_bucket": "proyecto-tm-ce4ab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959427218827:android:ae1b79c97d83ab3086f38e",
+        "android_client_info": {
+          "package_name": "com.example.tiendamovilapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT7T8jEKYVppD_EB-WDC9wIg93isnbFI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
