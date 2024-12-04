@@ -4,13 +4,29 @@ public class DataClass {
 
     private String dataCodigo;
     private String dataNom;
-    private String dataCant;
-    private String dataPrec;
+    private int dataCant;
+    private int dataPrec;
     private String dataImage;
     private String key;
 
-    public String getKey() {
-        return key;
+    public void setDataCodigo(String dataCodigo) {
+        this.dataCodigo = dataCodigo;
+    }
+
+    public void setDataNom(String dataNom) {
+        this.dataNom = dataNom;
+    }
+
+    public void setDataCant(int dataCant) {
+        this.dataCant = dataCant;
+    }
+
+    public void setDataPrec(int dataPrec) {
+        this.dataPrec = dataPrec;
+    }
+
+    public void setDataImage(String dataImage) {
+        this.dataImage = dataImage;
     }
 
     public void setKey(String key) {
@@ -25,11 +41,11 @@ public class DataClass {
         return dataNom;
     }
 
-    public String getDataCant() {
+    public int getDataCant() {
         return dataCant;
     }
 
-    public String getDataPrec() {
+    public int getDataPrec() {
         return dataPrec;
     }
 
@@ -37,12 +53,17 @@ public class DataClass {
         return dataImage;
     }
 
-    public DataClass(String dataCodigo, String dataNom, String dataCant, String dataPrec, String dataImage) {
+    public String getKey() {
+        return key;
+    }
+
+    public DataClass(String dataCodigo, String dataNom, int dataCant, int dataPrec, String dataImage, String key) {
         this.dataCodigo = dataCodigo;
         this.dataNom = dataNom;
         this.dataCant = dataCant;
         this.dataPrec = dataPrec;
         this.dataImage = dataImage;
+        this.key = key;
     }
 
     public DataClass(){

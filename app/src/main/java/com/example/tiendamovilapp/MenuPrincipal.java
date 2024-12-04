@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MenuPrincipal extends AppCompatActivity {
 
-    ImageView im_products;
+    ImageView im_products, im_venta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +27,21 @@ public class MenuPrincipal extends AppCompatActivity {
         });
 
         im_products = findViewById(R.id.im_products);
+        im_venta = findViewById(R.id.im_venta);
+
         im_products.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MenuPrincipal.this , ListaProductos.class));
-                finish();
+
             }
         });
+        im_venta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MenuPrincipal.this, VentaProductos.class));
+            }
+        });
+
     }
 }

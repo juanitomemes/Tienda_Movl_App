@@ -40,7 +40,7 @@ public class MyAdaptador extends RecyclerView.Adapter<MyViewHolder> {
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
         holder.recCodigo.setText(dataList.get(position).getDataCodigo());
         holder.recTitulo.setText(dataList.get(position).getDataNom());
-        holder.recPrecio.setText(dataList.get(position).getDataPrec());
+        holder.recPrecio.setText(String.valueOf(dataList.get(position).getDataPrec()));
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override

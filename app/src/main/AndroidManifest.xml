@@ -15,6 +15,9 @@
         android:theme="@style/Theme.TiendaMovilApp"
         tools:targetApi="31">
         <activity
+            android:name=".VentaProductos"
+            android:exported="false" />
+        <activity
             android:name=".DetalleProducto"
             android:exported="false" />
         <activity
