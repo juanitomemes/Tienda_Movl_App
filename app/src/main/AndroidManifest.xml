@@ -15,6 +15,12 @@
         android:theme="@style/Theme.TiendaMovilApp"
         tools:targetApi="31">
         <activity
+            android:name=".CorteCaja"
+            android:exported="false" />
+        <activity
+            android:name=".VentaFinalizadaActivity"
+            android:exported="false" />
+        <activity
             android:name=".VentaProductos"
             android:exported="false" />
         <activity
@@ -30,7 +36,7 @@
             android:name=".MenuPrincipal"
             android:exported="false" />
         <activity
-            android:name=".MainActivity_register"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,13 +54,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".MainActivity_register"
+            android:exported="false">
         </activity>
     </application>
 

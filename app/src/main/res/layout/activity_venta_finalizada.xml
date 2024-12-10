@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VentaFinalizadaActivity">
+
+
+    <TextView
+        android:id="@+id/txtProductosVendidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Productos Vendidos"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtTotalVenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total a Pagar: $0.00"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
+</LinearLayout>

@@ -26,11 +26,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-
+        android:id="@+id/registerButton"
         android:layout_marginTop="50dp"
         android:textAlignment="center"
         android:text="Register"
+        android:background="@android:color/transparent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="200dp"/>
 
 </LinearLayout>

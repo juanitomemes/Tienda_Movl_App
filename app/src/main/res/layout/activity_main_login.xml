@@ -11,14 +11,13 @@
     android:padding="26dp"
     android:gravity="center">
 
-
     <!-- Icono de la aplicación -->
     <ImageView
         android:id="@+id/icon"
         android:layout_width="164dp"
         android:layout_height="158dp"
         android:elevation="8dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/logo"
         android:translationZ="8dp"/>
 
     <!-- Campo de texto para el correo electrónico -->

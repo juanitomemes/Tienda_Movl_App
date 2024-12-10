@@ -1,5 +1,6 @@
 package com.example.tiendamovilapp;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 
@@ -27,6 +28,9 @@ public class MainActivity_login extends AppCompatActivity {
     private Button loginButton;
     private TextView registerLink;
     private FirebaseAuth mAuth;
+
+    private static final String PREFS_NAME = "TiendaMovilDoc"; // Nombre del archivo SharedPreferences
+    private static final String KEY_PASSWORD = "password"; // Clave para el valor total
 
 
 
@@ -79,6 +83,7 @@ public class MainActivity_login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(MainActivity_login.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
+                            savePassword(password);
                             // Aquí puedes redirigir al usuario a la actividad principal
                             startActivity(new Intent(MainActivity_login.this, MenuPrincipal.class));
                             finish();
@@ -90,5 +95,14 @@ public class MainActivity_login extends AppCompatActivity {
                     }
            });
     }
+
+    // Método para leer el valor asociado a "password"
+    private void savePassword(String password) {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_PASSWORD, password);
+        editor.apply(); // Confirmar los cambios
+    }
+
 
 }

@@ -23,6 +23,7 @@
             android:padding="8dp"
             android:scaleType="centerCrop"
             android:src="@drawable/subirimagen"
+
             app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
 
         <TextView
@@ -35,6 +36,7 @@
             android:layout_toEndOf="@+id/recImage"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"/>
+
         <TextView
             android:layout_width="120dp"
             android:layout_height="30dp"

@@ -122,7 +122,7 @@ public class InsertarProducto extends AppCompatActivity {
         String codigoBarras = insertarCodigo.getText().toString();
         String nombre = insertarNombre.getText().toString();
         int cantidad = Integer.parseInt(insertarCantidad.getText().toString());
-        int precio = Integer.parseInt(insertarPrecio.getText().toString());
+        String precio = insertarPrecio.getText().toString();
 
         DataClass dataClass = new DataClass(codigoBarras, nombre, cantidad, precio, imageURL, "");
 

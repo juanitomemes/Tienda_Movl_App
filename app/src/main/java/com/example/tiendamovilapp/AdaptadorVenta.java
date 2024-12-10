@@ -17,26 +17,27 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyAdaptador extends RecyclerView.Adapter<MyViewHolder> {
-
+public class AdaptadorVenta extends RecyclerView.Adapter<MyViewHolderVenta> {
     private Context context;
     private List<DataClass> dataList;
+    private ProductoSeleccionadoCallback mProductoSeleccionadoCallback;
 
-    public MyAdaptador(Context context, List<DataClass> dataList) {
+    public AdaptadorVenta(Context context, List<DataClass> dataList, ProductoSeleccionadoCallback productoSeleccionadoCallback) {
+        this.mProductoSeleccionadoCallback = productoSeleccionadoCallback;
         this.context = context;
         this.dataList = dataList;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolderVenta onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false);
 
-        return new MyViewHolder(view);
+        return new MyViewHolderVenta(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolderVenta holder, int position) {
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
         holder.recCodigo.setText(dataList.get(position).getDataCodigo());
         holder.recTitulo.setText(dataList.get(position).getDataNom());
@@ -45,6 +46,8 @@ public class MyAdaptador extends RecyclerView.Adapter<MyViewHolder> {
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mProductoSeleccionadoCallback.productoSeleccionado(dataList.get(position));
+
                 Intent intent = new Intent(context, DetalleProducto.class);
                 intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getDataImage());
                 intent.putExtra("Producto", dataList.get(holder.getAdapterPosition()).getDataNom());
@@ -52,8 +55,7 @@ public class MyAdaptador extends RecyclerView.Adapter<MyViewHolder> {
                 intent.putExtra("Codigo", dataList.get(holder.getAdapterPosition()).getDataCodigo());
                 intent.putExtra("key", dataList.get(holder.getAdapterPosition()).getKey());
 
-
-                context.startActivity(intent);
+               // context.startActivity(intent);
             }
         });
 
@@ -64,19 +66,19 @@ public class MyAdaptador extends RecyclerView.Adapter<MyViewHolder> {
         return dataList.size();
     }
 
-   public void searchDataList(ArrayList<DataClass> searchList){
+    public void searchDataList(ArrayList<DataClass> searchList) {
         dataList = searchList;
         notifyDataSetChanged();
     }
 }
 
-class MyViewHolder extends RecyclerView.ViewHolder{
+class MyViewHolderVenta extends RecyclerView.ViewHolder {
 
     ImageView recImage;
     TextView recTitulo, recCodigo, recPrecio;
     CardView recCard;
 
-    public MyViewHolder(@NonNull View itemView) {
+    public MyViewHolderVenta(@NonNull View itemView) {
         super(itemView);
 
         recImage = itemView.findViewById(R.id.recImage);
